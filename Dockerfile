@@ -8,7 +8,7 @@ RUN git clone https://github.com/soedinglab/MMseqs2.git && \
    mkdir build && \
    cd build && \
    cmake -DCMAKE_BUILD_TYPE=Release .. && \
-   make -j 4 && \
+   make -j  && \
    cd src && \
    for LIB in $(ldd mmseqs | awk '{if (match($3,"/")){ print $3 }}'); do  LIB_NAME=$(basename "$LIB") cp "$LIB" "./$LIB_NAME"; done && \
    git clone https://github.com/upx/upx.git && \
