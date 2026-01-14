@@ -1,8 +1,8 @@
 FROM debian:trixie AS builder
 # install dependencies 
-RUN apt-get update && \
-   apt-get install -y git zlib1g-dev gcc binutils make g++ autoconf automake cmake libbz2-dev libatomic1
-
+RUN apt-get update && \ \
+apt-get install -y build-essential git zlib1g-dev gcc g++ binutils make autoconf automake cmake libz2-dev libatomic1 && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN git clone https://github.com/soedinglab/MMseqs2.git && \
    cd MMseqs2 && \
    mkdir build && \
