@@ -1,4 +1,4 @@
-FROM debian:bookworm AS builder
+FROM debian:trixie AS builder
 # install dependencies 
 RUN apt-get update && \
    apt-get install -y git zlib1g-dev gcc binutils make g++ autoconf automake cmake libbz2-dev libatomic1
